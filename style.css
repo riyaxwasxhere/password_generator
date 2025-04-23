@@ -52,13 +52,19 @@ html, body {
     color: #000a1a;
 }
 
-.copy{
+.copyIcon{
     height: 30px;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.copy:hover{
+.eyeIcon{
+    height: 25px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.copyIcon:hover{
     background: rgb(195, 211, 215);
     
 }

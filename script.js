@@ -1,6 +1,7 @@
 const generateBtn = document.querySelector("#generate")
 const passwordBox = document.querySelector("#password")
-const copyBtn = document.querySelector(".copy")
+const copyBtn = document.querySelector(".copyIcon")
+const eyeBtn = document.querySelector(".eyeIcon")
 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerCase = "abcdefghijklmnopqrstuvwxyz"
@@ -35,4 +36,18 @@ function copyPassword(){
 copyBtn.addEventListener("click",()=>{
     copyPassword()
     alert('Password copied!')
+})
+
+function showPassword(){
+    if(passwordBox.type=="password"){
+        passwordBox.type = "text"
+        eyeBtn.src = "images/eye.png"
+    }else{
+        passwordBox.type = "password"
+        eyeBtn.src = "images/hidden.png"
+    }
+}
+
+eyeBtn.addEventListener("click",()=>{
+    showPassword()
 })
