@@ -2,6 +2,8 @@ const generateBtn = document.querySelector("#generate")
 const passwordBox = document.querySelector("#password")
 const copyBtn = document.querySelector(".copyIcon")
 const eyeBtn = document.querySelector(".eyeIcon")
+const message = document.querySelector(".message")
+const strength = document.querySelector(".strength")
 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerCase = "abcdefghijklmnopqrstuvwxyz"
@@ -50,4 +52,28 @@ function showPassword(){
 
 eyeBtn.addEventListener("click",()=>{
     showPassword()
+})
+
+
+passwordBox.addEventListener("input",()=>{
+    if(passwordBox.value.length>0){
+        message.style.display = "block"
+    }else{
+        message.style.display = "none"
+    }
+    if(passwordBox.value.length <=4 && passwordBox.value.length>0){
+        strength.innerHTML = "weak"
+        passwordBox.style.borderColor = "red"
+        message.style.color = "red"
+    }
+    if(passwordBox.value.length >4 && passwordBox.value.length<=8){
+        strength.innerHTML = "medium"
+        passwordBox.style.borderColor = "yellow"
+        message.style.color = "yellow"
+    } 
+    if(passwordBox.value.length >8){
+        strength.innerHTML = "strong"
+        passwordBox.style.borderColor = "green"
+        message.style.color = "green"
+    }
 })
